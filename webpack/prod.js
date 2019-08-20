@@ -3,10 +3,13 @@ const path = require("path");
 const base = require("./base");
 const TerserPlugin = require("terser-webpack-plugin");
 
+console.log(path.resolve(__dirname, "public"));
+
 module.exports = merge(base, {
   mode: "production",
   output: {
-    filename: "bundle.min.js"
+    filename: "bundle.min.js",
+    path: path.resolve( __dirname,'../', "public")
   },
   devtool: false,
   performance: {
